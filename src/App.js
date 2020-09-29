@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Category from './category';
+import * as BooksAPI from './utils/BooksAPI';
 
-function App() {
+class App extends React.Component {
+  state={
+    shelves:{
+      c_reading:[],
+      want_to_read:[],
+      read:[]},
+      allBook:[]
+      }
+      componentDidMount() {
+        BooksAPI.getAll().then((books) => {
+          console.log(books)
+        })
+        console.log(this.state.shelves.c_reading)
+      }
+render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          RREdit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div class="App-Title"> MyReads App</div>
+      <Category name="Currently Reading" books={this.state.shelves.c_reading} />
+      <Category name="Want to Read" books={this.state.shelves.want_to_read} />
+      <Category name="Read" books={this.state.shelves.read} />
     </div>
   );
+  }
+
 }
 
 export default App;
