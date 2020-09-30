@@ -9,8 +9,8 @@ import * as BooksAPI from './utils/BooksAPI';
   render(){
     return (
       <div className="Shelf-Container">
-        <div className="Shelf-Title"> {this.props.name}</div>
-        <div className="Shelf-Category"> EE</div>
+      <div className="Shelf-Category"></div>
+      <div className="Shelf-Title"> {this.props.name}</div>
       </div>
             );
           }

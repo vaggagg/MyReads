@@ -16,6 +16,7 @@ class App extends React.Component {
       componentDidMount() {
         BooksAPI.getAll().then((allBooks) => {
           this.setState({allBooks:allBooks})
+          console.log(this.state.allBooks)
         })
 
       }
@@ -24,14 +25,15 @@ render(){
     <div className="App">
 
       <div class="App-Title"> MyReads App</div>
-      <Route  path='/' render={() => (
-        <div>
-      <Category name="Currently Reading" books={this.state.shelves.c_reading} />
-      <Category name="Want to Read" books={this.state.shelves.want_to_read} />
-      <Category name="Read" books={this.state.shelves.read} />
+      <Route exact path='/' render={() => (
+        <div className="Library">
+         <Category name="Currently Reading" books={this.state.shelves.c_reading} />
+         <Category name="Want to Read" books={this.state.shelves.want_to_read} />
+         <Category name="Read" books={this.state.shelves.read} />
+      <button className="open-search" />
       </div>
                                     )} />
-    <Route path='/create' render={({ history }) => (
+    <Route path='/search' render={({ history }) => (
       <Search />
 
     )}/>
