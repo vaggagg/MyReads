@@ -7,17 +7,13 @@ import * as BooksAPI from './utils/BooksAPI';
 
 class App extends React.Component {
   state={
-    shelves:{
-      c_reading:[],
-      want_to_read:[],
-      read:[]},
       allBooks:[]
       }
       componentDidMount() {
         BooksAPI.getAll().then((allBooks) => {
           this.setState({allBooks:allBooks})
-          console.log(this.state.allBooks)
         })
+
 
       }
 render(){
@@ -27,9 +23,9 @@ render(){
       <div class="App-Title"> MyReads App</div>
       <Route exact path='/' render={() => (
         <div className="Library">
-         <Category name="Currently Reading" books={this.state.shelves.c_reading} />
-         <Category name="Want to Read" books={this.state.shelves.want_to_read} />
-         <Category name="Read" books={this.state.shelves.read} />
+         <Category name="Currently Reading" books={this.state.allBooks} category="currentlyReading"/>
+         <Category name="Want to Read" books={this.state.allBooks} category="wantToRead"/>
+         <Category name="Read" books={this.state.allBooks} category="read"/>
       <button className="open-search" />
       </div>
                                     )} />
