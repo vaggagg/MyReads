@@ -1,4 +1,5 @@
 import React from 'react';
+import Book from './Book';
 
 
  class Category extends React.Component{
@@ -11,9 +12,11 @@ import React from 'react';
     return (
       <div className="Shelf-Container">
       <div className="Shelf-Category">
-      {books.map((x)=><div>
-        {x.title}</div>
-      )}
+      {books.map(x =>
+        <ul className="BookList">
+        <li key={x.id}><Book bookInfos={x} /></li>
+        </ul> )
+      }
       </div>
       <div className="Shelf-Title"> {this.props.name}</div>
       </div>

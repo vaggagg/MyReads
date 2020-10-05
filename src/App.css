@@ -22,6 +22,42 @@
   background-position: center;
   background-size: cover;
 }
+.BookList{
+  display:inline-block;
+  list-style-type: none;
+}
+.BookArrow{
+height:20px;
+width:50px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+.BookImageContainer{
+  height:90%;
+  width:100%;
+}
+.BookImage,.ImageAndTitle,.BookDescription{
+  height:100%;
+  width:100%;
+}
+.BookDescription{
+  overflow:auto;
+}
+.BookTitle{
+  width:100%;
+  height:10%;
+  overflow:hidden;
+}
+.BookTile{
+  width:200px;
+  height:250px;
+  background-color:white;
+  border-color:black;
+  border-style:solid;
+
+}
 .Shelf-Container{
   height:33.33333333%;
 
@@ -38,6 +74,7 @@
   max-width: 100%;
   background-image: url('./icons/wood-color.jpg');
   height:calc(100% - 40px);
+  overflow-x: auto;
 
 }
 .App-logo {
@@ -79,7 +116,11 @@ body, .app {
 }
 
 /* main page */
-
+.ListOfCategories{
+  width:200px;
+  height:200px;
+  background-color: red;
+}
 .list-books-title {
   padding: 10px 0;
   background: #2e7c31;
