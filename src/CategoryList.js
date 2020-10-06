@@ -7,7 +7,8 @@ document.getElementById(this.props.Book.id+"_"+this.props.Book.shelf).checked=tr
     const Book=this.props.Book
     return(
       <div className="ListOfCategories">
-        <form>
+      Choose the category of the book:
+        <form >
           <input type="radio" id={`${Book.id}_read`} name="category" value="read" />
           <label htmlfor="read">Read</label><br />
           <input type="radio" id={`${Book.id}_currentlyReading`} name="category" value="currentlyReading" />

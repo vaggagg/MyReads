@@ -14,6 +14,7 @@ showDescription=()=>{
 showSubmenu=()=>{
   this.setState({
     subMenuIsVisible:!this.state.subMenuIsVisible
+
   })
   if(this.state.subMenuIsVisible){
     this.setState({arrow:arrowUp})
@@ -26,17 +27,18 @@ showSubmenu=()=>{
    const Book=this.props.bookInfos
    return (
      <div className="BookTile">
-      {!this.state.descIsVisible&&<div className="ImageAndTitle"  onClick={this.showDescription}>
+     {this.state.subMenuIsVisible&&<CategoryList Book={Book}/>}
+      {!this.state.subMenuIsVisible&&!this.state.descIsVisible&&<div className="ImageAndTitle"  onClick={this.showDescription}>
         <div className="BookImageContainer" >
         <img className="BookImage" src={Book.imageLinks.thumbnail}></img>
       </div>
       <div className="BookTitle">{Book.title}</div>
       </div>}
-      {this.state.descIsVisible&&<div className="BookDescription"  onClick={this.showDescription}>
+      {!this.state.subMenuIsVisible&&this.state.descIsVisible&&<div className="BookDescription"  onClick={this.showDescription}>
         <h4>{Book.title}</h4>
         {Book.description}
       </div>}
-      {this.state.subMenuIsVisible&&<CategoryList Book={Book}/>}
+
       <div ><img className="BookArrow" src={this.state.arrow} onClick={this.showSubmenu}/></div>
      </div>
            );
