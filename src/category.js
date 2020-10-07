@@ -8,13 +8,12 @@ import Book from './Book';
   }
 
   render(){
-    const books=this.props.books.filter(b=>b.shelf===this.props.category)
     return (
       <div className="Shelf-Container">
       <div className="Shelf-Category">
-      {books.map(x =>
+      {this.props.books.map(x =>
         <ul className="BookList">
-        <li key={x.id}><Book bookInfos={x} /></li>
+        <li key={x.id}><Book bookInfos={x} changeStatus={this.props.changeStatus}/></li>
         </ul> )
       }
       </div>
