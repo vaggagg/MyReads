@@ -7,7 +7,7 @@ class CategoryList extends React.Component{
   })
 }
   changeStatus=(e)=>{
-  this.props.changeStatus(this.props.Book,e.target.value)
+    this.props.changeStatus(this.props.Book,e.target.value)
   }
   render(){
     const Book=this.props.Book

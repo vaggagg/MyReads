@@ -35,18 +35,19 @@ render(){
          <Category name="Want to Read" books={this.state.allBooks.filter(b=>b.shelf==="wantToRead")} category="wantToRead" changeStatus={this.changeStatus}/>
          <Category name="Read" books={this.state.allBooks.filter(b=>b.shelf==="read")} category="read" changeStatus={this.changeStatus} />
          <Link to="/search">
-         <button>Search for more Books</button>
+          <a>Search for more Books</a>
          </Link>
       </div>
                                     )} />
     <Route path='/search' render={({ history }) => (
       <div>
-      <Link to="/">
-      <button>Go back to your library</button>
-      </Link>
-      <Search changeStatus={this.changeStatus}/>
+        <Link to="/">
+          <a>Go back to your library</a>
+        </Link>
+        <Search changeStatus={this.changeStatus}/>
       </div>
     )}/>
+    
     </div>
   );
   }

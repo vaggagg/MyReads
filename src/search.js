@@ -31,7 +31,7 @@ updateQuery=(text)=>{
         <li key={x.id}><Book bookInfos={x} changeStatus={this.props.changeStatus}/></li>
         </ul> )
       }
-      {noBooksFound&&<p>No books were found</p>}
+      {noBooksFound&&<p class="noBooksFound"><b>No books were found</b></p>}
        </div>
       </div>
             );

@@ -40,7 +40,6 @@ showSubmenu=()=>{
         {Book.description}
 
       </div>}
-
       <div ><img className="BookArrow" src={this.state.arrow} onClick={this.showSubmenu}/></div>
      </div>
            );
