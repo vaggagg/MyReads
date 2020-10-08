@@ -15,7 +15,7 @@ updateQuery=(text)=>{
   })
 }
   render(){
-    const noBooksFound=this.state.resultOfSearch.length>0?false:true
+    const noBooksFound=(this.state.resultOfSearch==undefined||!this.state.resultOfSearch.length>0)?true:false
     return (
       <div className="Search-Container">
       <input

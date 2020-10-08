@@ -1,7 +1,6 @@
 import React from 'react';
 class CategoryList extends React.Component{
   componentDidMount(){
-      alert(this.props.Book.shelf)
     if(this.props.Book.shelf){
     document.getElementById(this.props.Book.id+"_"+this.props.Book.shelf).checked=true;
   }
