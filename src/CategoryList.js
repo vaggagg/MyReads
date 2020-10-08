@@ -1,13 +1,11 @@
 import React from 'react';
+import * as BooksAPI from './utils/BooksAPI';
 class CategoryList extends React.Component{
   componentDidMount(){
-    if(this.props.Book.shelf){
-    document.getElementById(this.props.Book.id+"_"+this.props.Book.shelf).checked=true;
-  }
-else {
-  document.getElementById(this.props.Book.id+"_none").checked=true;
+  BooksAPI.get(this.props.Book.id).then((book)=>{
+    document.getElementById(book.id+"_"+book.shelf).checked=true;
+  })
 }
-  }
   changeStatus=(e)=>{
   this.props.changeStatus(this.props.Book,e.target.value)
   }
