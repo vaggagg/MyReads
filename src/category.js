@@ -11,11 +11,13 @@ import Book from './Book';
     return (
       <div className="Shelf-Container">
       <div className="Shelf-Category">
-      {this.props.books.map(x =>
-        <ul className="BookList">
-        <li key={x.id}><Book bookInfos={x} changeStatus={this.props.changeStatus}/></li>
-        </ul> )
-      }
+      <ul className="BookList">
+      {this.props.books.map((x,index) =>
+
+        <li key={index}><Book bookInfos={x} changeStatus={this.props.changeStatus}/></li>
+
+      )}
+      </ul>
       </div>
       <div className="Shelf-Title"> {this.props.name}</div>
       </div>

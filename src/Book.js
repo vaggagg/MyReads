@@ -30,7 +30,7 @@ showSubmenu=()=>{
      {this.state.subMenuIsVisible&&<CategoryList Book={Book} changeStatus={this.props.changeStatus}/>}
       {!this.state.subMenuIsVisible&&!this.state.descIsVisible&&<div className="ImageAndTitle"  onClick={this.showDescription}>
         <div className="BookImageContainer" >
-        <img className="BookImage" src={Book.imageLinks.thumbnail}></img>
+        <img className="BookImage" alt="Book cover" src={Book.imageLinks.thumbnail}></img>
       </div>
       <div className="BookTitle">{Book.title}</div>
       </div>}
@@ -40,7 +40,7 @@ showSubmenu=()=>{
         {Book.description}
 
       </div>}
-      <div ><img className="BookArrow" src={this.state.arrow} onClick={this.showSubmenu}/></div>
+      <div ><img className="BookArrow" alt="" src={this.state.arrow} onClick={this.showSubmenu}/></div>
      </div>
            );
          }

@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-import Category from './category';
-import Search from './search'
+import Category from './Category';
+import Search from './Search'
 import {Link} from 'react-router-dom'
 import * as BooksAPI from './utils/BooksAPI';
 
@@ -28,26 +28,26 @@ render(){
   return (
     <div className="App">
 
-      <div class="App-Title"> MyReads App</div>
+      <div className="App-Title"> MyReads App</div>
       <Route exact path='/' render={() => (
         <div className="Library">
          <Category name="Currently Reading" books={this.state.allBooks.filter(b=>b.shelf==="currentlyReading")} category="currentlyReading" changeStatus={this.changeStatus}/>
          <Category name="Want to Read" books={this.state.allBooks.filter(b=>b.shelf==="wantToRead")} category="wantToRead" changeStatus={this.changeStatus}/>
          <Category name="Read" books={this.state.allBooks.filter(b=>b.shelf==="read")} category="read" changeStatus={this.changeStatus} />
          <Link to="/search">
-          <a>Search for more Books</a>
+          Search for more Books
          </Link>
       </div>
                                     )} />
     <Route path='/search' render={({ history }) => (
       <div>
         <Link to="/">
-          <a>Go back to your library</a>
+          Go back to your library
         </Link>
         <Search changeStatus={this.changeStatus}/>
       </div>
     )}/>
-    
+
     </div>
   );
   }

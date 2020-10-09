@@ -15,7 +15,7 @@ updateQuery=(text)=>{
   })
 }
   render(){
-    const noBooksFound=(this.state.resultOfSearch==undefined||!this.state.resultOfSearch.length>0)?true:false
+    const noBooksFound=(this.state.resultOfSearch===undefined||!this.state.resultOfSearch.length>0)?true:false
     return (
       <div className="Search-Container">
       <input
@@ -26,12 +26,13 @@ updateQuery=(text)=>{
         onChange={(event) => this.updateQuery(event.target.value)}
       />
       <div className="Search-Results">
-      {!noBooksFound&&this.state.resultOfSearch.map(x =>
-        <ul className="BookList">
+      {!noBooksFound&&<ul className="BookList">
+      {this.state.resultOfSearch.map(x =>
         <li key={x.id}><Book bookInfos={x} changeStatus={this.props.changeStatus}/></li>
-        </ul> )
+      )}
+        </ul>
       }
-      {noBooksFound&&<p class="noBooksFound"><b>No books were found</b></p>}
+      {noBooksFound&&<p className="noBooksFound"><b>No books were found</b></p>}
        </div>
       </div>
             );
